@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Akisato Suzuki - Bayesian statistics, causal inference, and decision theory</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 class="center">Akisato Suzuki</h1>
+
+<h2 class="center">Data Science Blog</h2>
+
+<p class="links">
+<a href="index.html">Top page</a> |
+<a href="research.html">Research Projects</a> |
+<a href="papers.html">Publications and Working Papers</a> |
+<a href="programs.html">Statistical Programs</a> |
+<a href="blog.html">Data Science Blog</a>
+</p>
+
+<h3 class="sectitle">"Bias" and the Bayesian philosophy of statistics</h3>
+
+Date: 18 September 2020
+
+<p>
+In the Frequentist philosophy of statistics, "bias" is defined as the difference between the true parameter value and the average of all estimated values over repeated sampling. This concept is useful when it is plausible to assume there is a fixed true parameter value. For example, if one were interested in locating a lost phone, the true parameter value would be the location of the phone. The best estimator would then be the one that is unbiased and also most efficient, i.e., able to locate the phone with as few attempts as possible.
+</p>
+
+<p>
+Sometimes, however, the assumption of one single true parameter value may not make much sense. For example, what if we were interested in the (average) effect of a lost phone on its owner's stress level? It seems too rigid if we assumed there is one fixed true parameter value for the effect size of a lost phone on its owner's stress level. The human world and the population are always changing, so it is unclear to me what the true parameter value would be for in this context. And I am not sure either if thinking about the "superpopulation" is a useful way-out; I won't elaborate on this point here (for those interested, see Hernán and Robins 2020).
+</p>
+
+<p>
+In cases like above, to me it makes more sense to treat a parameter as a random variable, as done in the Bayesian philosophy of statistics. But if so, the Frequentist definition of bias cannot be applied because there is no single "true" value. Then, how can we evaluate the performance of an estimator? One way could be to measure the difference between the true distribution of a parameter and the estimated distribution of the same parameter. The best estimator is then the one that makes the estimated distribution of a parameter as close to the true one as possible.
+</p>
+
+<p>
+This is significant depature from the Frequentist concept of bias. Even if the mean of an estimated distribution is the same as that of the true distribution, in which case there is no bias in the Frequentist sense, the difference in the shape of the distribution can result in significantly different implications for interpretation and practice.
+</p>
+
+<p>For example, if an estimated distribution for a causal effect has the same mean but is much narrower than the true distribution, it underestimates the variation in the effect size. If the quantity of interest were only the mean, this might be ok. But if the quantity of interest included the variance of a parameter distribution, the difference in the shape of distribution would be problematic. For example, a decision maker might be interested in avoiding any counter-productive effect (e.g., the effect of a new treatment on a disease). In such a case, the underestimation of the variance of a parameter distribution would be consequential for decision making and for those who would be affected by this decision making.
+</p>
+
+<p>
+It might be argued that a parameter distribution is governed by a fixed hyperparameter value / values (e.g., the mean and standard deviation for a normal distribution). Then, the argument might go on, it is possible to recover them through repeating sampling and, therefore, the Frequentist phisolophy of statistics still makes sense. I am not sure if this is practically possible, but my concern is more philosophical.
+</p>
+
+<p>
+The problem is that the variation in parameter estimates is only attributable to a sampling process in the Frequentist philosophy. In the Frequentist philosophy, there is a well-defined population, where a fixed parameter value governs a data generating process. A parameter estimate may well vary from sample to sample, but that is not considered to be because of the parameter itself exhibiting a variation. It is simply because of random sampling generating a different set of individual units, whose average asymptotically converges to the same set of inidividual units as the population. In short, by definition there is no such a thing as the variance of a parameter distribution. It is philosophically contradictory for Frequentist statistics to try to estimate such a variance.
+</p>
+
+<p>
+Whether the Frequentist or Bayesian philosophy of statistics is appropriate, depends on what the purpose of statistical inference is. If it is plausible to think there is a single parameter value to discover, the Frequentist philosophy makes sense. If not, the Bayesian philosophy may be more suitable.
+</p>
+
+<p>
+Finally, I found a related discussion between Kass (2011a, 2011b) and others (Gelman 2011; Goodman 2011; McCulloch; Stern 2011;) in <i>Statistical Science</i> interesting.
+</p>
+
+<p class="paper">
+References
+</p>
+
+<p>
+Gelman, Andrew. 2011. “Bayesian Statistical Pragmatism.” <i>Statistical Science</i> 26 (1): 10–11.
+</p>
+
+<p>
+Goodman, Steven N. 2011. “Discussion of ‘Statistical Inference: The Big Picture’ by R. E. Kass.” <i>Statistical Science</i> 26 (1): 12–14.
+</p>
+
+<p>
+Hernán, Miguel A., and James M. Robins. 2020. <i>Causal Inference: What If</i>. Boca Raton, FL: Chapman & Hall/CRC.
+</p>
+
+<p>
+Kass, Robert E. 2011a. “Statistical Inference: The Big Picture.” <i>Statistical Science</i> 26 (1): 1–9.
+</p>
+
+<p>
+Kass, Robert E. 2011b. “Rejoinder.” <i>Statistical Science</i> 26 (1): 19–20.
+</p>
+
+<p>
+McCulloch, Robert. 2011. “Discussion of ‘Statistical Inference: The Big Picture’ by R. E. Kass.” <i>Statistical Science</i> 26 (1): 15–16.
+</p>
+
+<p>
+Stern, Hal. 2011. “Discussion of ‘Statistical Inference: The Big Picture’ by R. E. Kass.” <i>Statistical Science</i> 26 (1): 17–18.
+</p>
+
+<p>
+<a href="blog.html">Back to the list</a>
+</p>
+
+</body>
+</html>
+

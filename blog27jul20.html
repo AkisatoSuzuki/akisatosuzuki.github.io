@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Akisato Suzuki - Bayesian statistics, causal inference, and decision theory</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 class="center">Akisato Suzuki</h1>
+
+<h2 class="center">Data Science Blog</h2>
+
+<p class="links">
+<a href="index.html">Top page</a> |
+<a href="research.html">Research Projects</a> |
+<a href="papers.html">Publications and Working Papers</a> |
+<a href="programs.html">Statistical Programs</a> |
+<a href="blog.html">Data Science Blog</a>
+</p>
+
+<h3 class="sectitle">Bayesian decision theory and practically null values</h3>
+
+Date: 27 July 2020
+
+<p>
+    Bayesian statistical decision theory is a powerful tool to evaluate whether a decision produces a better outcome than another decision (e.g., see Berger 1985). It capitalizes on the posterior distribution of a parameter for the function that maps a decision into an outcome. Because it is a posterior distribution, parameter values have probability. This makes it possible to compute the expected gain or loss (i.e., a predicted quantity times the probability of it being realized), which is a natural quantity of interest as we usually don't know what will happen in future.
+</p>
+
+<p>
+    Meanwhile, in statistical inference for practical relevance, there is an argument that it is important to consider what values are practically non-null (Gross 2015; Kruschke 2018). For example, imagine a company wanted to measure the expected gain given investing a certain amount of money to develop a new product. Also imagine that the company needed to make at least 1 million euro of gain to keep running; anything smaller than that would lead the company to bankruptcy. In such a case, the values of the posterior predictive distribution of gain that are less than 1 million euro is practically null values. Put differently, any parameter value that maps the invested amount of money to an outcome of less than 1 million euro is practically null values.
+</p>
+
+<p>
+    These two theories over statistical inference are relevant to each other. For example, in the above example, if those parameter values in the posterior distribution that map the invested amount of money to an outcome of less than 1 million euro are practically null values, then all these values should be re-assigned a value of zero before being put into the relevant decision-theoretic model for the company. This ensures the expected gain is computed based on the remaining practically non-null values, weighted by their probability mass, which is one minus the probability mass associated with the practically null values. It is important to use only the probability mass of the remaining practically non-null values, rather than the entire probability mass of one; otherwise, the expected gain would be upward-biased. The posterior distribution mathematically says there is a probability mass associated with the practically null values. These values are mathematically non-null but practically null so that they are re-assigned a value of zero for practical reasons.
+</p>
+
+<p>
+    We should not manipulate data used for statistical estimation, to make the outcome variable assigned a value of zero for those practically null values. Practically null values discussed in this post are associated with a utility/loss function and not with a data generating process. If a value of zero were assigned to the outcome for the practically null values, this would bias statistical estimation.
+</p> 
+    
+<p>
+    References
+</p>
+
+
+<p>
+    Berger, James O. 1985. <i>Statistical Decision Theory and Bayesian Analysis</i>. 2nd ed. New York, NY: Springer.
+</p>    
+<p>
+    Gross, Justin H. 2015. “Testing What Matters (If You Must Test at All): A Context-Driven Approach to Substantive and Statistical Significance.” <i>American Journal of Political Science</i> 59 (3): 775–88.
+</p>
+<p>
+    Kruschke, John K. 2018. “Rejecting or Accepting Parameter Values in Bayesian Estimation.” <i>Advances in Methods and Practices in Psychological Science</i> 1 (2): 270–280.
+</p>
+
+<p>
+<a href="blog.html">Back to the list</a>
+</p>
+
+</body>
+</html>
+
