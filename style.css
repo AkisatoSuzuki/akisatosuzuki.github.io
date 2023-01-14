@@ -1,0 +1,65 @@
+.center{
+    text-align: center;
+}
+
+body{
+    font-size: 12pt;
+    color: #d5dbdb  ;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #2c3e50;
+    max-width: 800px;
+    margin: auto;
+}
+
+a{
+    color: #85c1e9 ;
+}
+
+h3{
+    text-align: justify;
+}
+
+.links{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+p{
+    text-align: justify;
+}
+
+.sectitle{
+    margin-top:40px;
+}
+
+.paper{
+    margin-top:30px;
+}
+
+.whatsnew{
+    margin-bottom:30px;
+    text-align: center;
+}
+
+.code{
+    font-size: 11pt;
+    font-family: Consolas, 'Courier New', monospace;
+    color: #000000;
+    margin-top:30px;
+    margin-bottom:30px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+}
+
+.imgresize{
+    max-width: 800px;
+    height: auto;
+    margin-top:30px;
+    margin-bottom:30px;
+    border: 1px solid #000000;
+}
+
+.item{
+    margin-bottom:30px;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <title>Akisato Suzuki - Political Science and Policy Analysis</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<h1 class="center">Akisato Suzuki</h1>
+
+<h2 class="center">Data Science Blog</h2>
+
+<p class="links">
+<a href="index.html">Top page</a> |
+<a href="research.html">Research Projects</a> |
+<a href="papers.html">Publications and Working Papers</a> |
+<a href="programs.html">Statistical Programs</a> |
+<a href="blog.html">Data Science Blog</a>
+</p>
+
+<h3 class="sectitle">A (philosophically) Bayesian way to simulate data</h3>
+
+Date: 21 July 2020
+
+<p>
+    When we want to validate a statistical model, we usually simulate data via a Monte Carlo method. For example, we might use an R code such as:
+</p>
+
+<p>
+    n <- 1e3<br>
+    u <- rnorm(n, mean = 0, sd = 10)<br>
+    x <- rnorm(n, mean = 1.5*u, sd = 10)<br>
+    y <- rnorm(n, mean = -1*x + -2.5*u, sd = 10)
+</p>
+
+<p>
+    where all parameters are fixed values (that I arbitrary chose) and known to us. This setup conforms well to the Frequentist philosophy of statistics, which assumes there is a fixed parameter value while data are randomly generated.
+</p>
+
+<p>
+    Meanwhile, fixed parameters in a simulation seem to be at odds with the Bayesian philosophy of statistics, which assumes a parameter is a random variable. If we stick with this Bayesian philosophy, we might simulate data as follows:
+</p>
+
+<p>
+    n <- 1e3<br>
+    u <- rnorm(n, mean = rnorm(1, mean = 0, sd = 1), sd = rexp(1, rate = 1))<br>
+    x <- rnorm(n, mean = rnorm(1, mean = 0, sd = 1)*u, sd = rexp(1, rate = 1))<br>
+    y <- rnorm(n, mean = rnorm(1, mean = 0, sd = 1)*x + rnorm(1, 0, 1)*u, sd = rexp(1, rate = 1))
+</p>
+
+<p>
+    where rnorm(1, mean = 0, sd = 1) and rexp(1, rate = 1) is just an arbitrary choice, but the point is to make these parameters random variables and which value is drawn unknown to us (unless we set a seed number, which the above code explicitly does not). Then, the performance of a model might be evaluated based on how much a posterior overlaps the true parameter distribution.
+</p>
+
+<p>
+    Validating a model like this may be more useful than by a Frequentist way of looking at a long-term coverage of a fixed parameter value, if the Bayesian philosophy of statistics makes more sense in a given task than the Frequentist one. For example, if an analyst wanted to compare the performance of two models to compute the uncertainty of her estimate as the probability that a parameter takes specific values (perhaps because repeated sampling is unrealistic, which is often the case in social science), the Bayesian philosophy of statistics would make more sense, and she could compare the performance of the two models by looking at which one covers more of the true parameter distribution.
+</p>
+
+<p>
+<a href="blog.html">Back to the list</a>
+</p>
+
+</body>
+</html>
+
